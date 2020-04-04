@@ -8,8 +8,8 @@ from dateutil.relativedelta import relativedelta
 class Patient(models.Model):
     _name = 'hms.patient'
 
-    first_name = fields.Char(required="True")
-    last_name = fields.Char(required="True")
+    first_name = fields.Char(required=True)
+    last_name = fields.Char(required=True)
     Birth_date = fields.Date()
     email = fields.Char()
     history = fields.Html()

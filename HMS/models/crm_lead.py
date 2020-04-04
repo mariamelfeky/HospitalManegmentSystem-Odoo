@@ -3,9 +3,10 @@ from odoo.exceptions import UserError
 
 
 class patient_customer(models.Model):
-    _inherit = 'crm.lead'
+    _inherit = 'res.partner'
 
-    related_patient_id = fields.Integer()
+    related_patient_id = fields.Many2one(comodel_name="hms.patient")
+    vat = fields.Char(required=True)
 
     @api.multi
     def unlink(self):
