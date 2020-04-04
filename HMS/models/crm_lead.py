@@ -8,6 +8,16 @@ class patient_customer(models.Model):
     related_patient_id = fields.Many2one(comodel_name="hms.patient")
     vat = fields.Char(required=True)
 
+
+
+    # @api.constrain('email')
+    # def check_email(self):
+    #     for rec in self:
+    #         if rec.related_patient_id:
+    #             patient_email = rec.related_patient_id.email
+    #             if rec.search(['email', '=', patient_email]):
+    #                 raise UserError(f'change your email please')
+
     @api.multi
     def unlink(self):
         for rec in self:
