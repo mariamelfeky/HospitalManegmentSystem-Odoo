@@ -21,7 +21,13 @@
 
                 <form>
                         <header>
-                            <button id="action_approve" string="approve" type="object"/>
+                            <button  string="approve" type="object" name="change_state"
+                             context="{'state':'undetermined'}" attrs="{'invisible':[('state','!=','undetermined')]}"/>
+                            <button  string="good" type="object" name="change_state"
+                             context="{'state':'good'}" attrs="{'invisible':[('state','!=','good')]}" />
+                            <button  string="fair" type="object" name="change_state"
+                             context="{'state':'fair'}" attrs="{'invisible':[('state','!=','fair')]}" />
+
                             <field name="state" widget="statusbar"/>
                         </header>
                     <sheet>

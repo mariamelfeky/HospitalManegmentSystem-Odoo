@@ -26,7 +26,7 @@ class Patient(models.Model):
     ])
     image = fields.Binary()
     address = fields.Text()
-    age = fields.Integer(compute="_compute_age")
+    age = fields.Integer(compute="_compute_age", store=True)
     state = fields.Selection([
         ('undetermined', 'Undetermined'),
         ('good', 'Good'),
@@ -76,12 +76,19 @@ class Patient(models.Model):
         ("Valid Email", "UNIQUE(email)", "The email you entered already exists")
     ]
 
+    def change_state(self):
+        new_state = self.env.context['state']
+        self.state = new_state
 
+
+    # def change_state(self):
+    #     students = self.search([("state", "=", "undetermined")])
+    #     for student in students:
+    #         student.state = "good"
+    #     # students.write({"state": "first"})
 
 #
-# class patient_customer(models.Model):
-#     _name = 'hms.pationt_customer'
-#     _inherit = 'crm'
+
 
 
 

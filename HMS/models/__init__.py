@@ -1,1 +1,1 @@
-from . import hms_patient, hms_department, hms_doctor, hms_history
+from . import hms_patient, hms_department, hms_doctor, hms_history, crm_lead

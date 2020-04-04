@@ -5,12 +5,13 @@
     'author': 'Mariam',
     'website': 'www.iti.org.com',
     'depends': [
-
+        'crm'
     ],
     'data': [
         'views/patient.xml',
         'views/department.xml',
         'views/doctor.xml',
-        'views/history.xml'
+        'views/history.xml',
+        'views/crm_patient.xml'
     ]
 }
